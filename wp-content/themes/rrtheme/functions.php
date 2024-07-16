@@ -9,10 +9,22 @@ function my_first_post_type() {
         'public' => true, // Ensure the post type is publicly accessible
         'menu_icon' => 'dashicons-car',
         'hierarchical' => false, // Set to true if the post type is hierarchical (like pages)
-        'supports' => array('title', 'editor', 'thumbnail') // Add other supports as needed
     );
 
     register_post_type('cars', $args);
+
+
+    $args = array(
+        'labels' => array(
+            'name' => 'Locations',
+            'singular_name' => 'Location',
+        ),
+        'public' => true, // Ensure the post type is publicly accessible
+        'menu_icon' => 'dashicons-building',
+        'hierarchical' => false, // Set to true if the post type is hierarchical (like pages)
+    );
+
+    register_post_type('locations', $args);
 }
 add_action('init', 'my_first_post_type');
 
